@@ -61,15 +61,15 @@ def get_task(todo_id: int):
 
 # 5. Update a task
 @app.put("/todo-list/{task_id}")
-def update_task(task_id: int, updated_task: Todo):
+def update_task(task_id: int, updated_todo: Todo):
 
     for task in todo_list:
         if task["id"] == task_id:
-            task["title"] = updated_task.title
-            task["description"] = updated_task.description
-            task["completed"] = updated_task.completed
+            task["title"] = updated_todo.title
+            task["description"] = updated_todo.description
+            task["completed"] = updated_todo.completed
             return {
-                "message": "Task updated successfully",
+                "message": "todo item updated successfully",
                 "task": task
             }
 
